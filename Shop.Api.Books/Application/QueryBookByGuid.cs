@@ -15,19 +15,19 @@ public class QueryBookByGuid
     
     public class Handler : IRequestHandler<BookByGuid, BookDto>
     {
-        private readonly BookContext _BookContext;
+        private readonly BookContext _bookContext;
         private readonly IMapper _mapper;
 
-        public Handler(BookContext BookContext, IMapper mapper)
+        public Handler(BookContext bookContext, IMapper mapper)
         {
-            _BookContext = BookContext;
+            _bookContext = bookContext;
             _mapper = mapper;
         }
         
         public async Task<BookDto> Handle(BookByGuid request, CancellationToken cancellationToken)
         {
             var guid = Guid.Parse(request.BookGuid);
-            var Book = await _BookContext.Books.Where(x => x.BookGuid == guid).FirstOrDefaultAsync(cancellationToken);
+            var Book = await _bookContext.Books.Where(x => x.BookGuid == guid).FirstOrDefaultAsync(cancellationToken);
             if (Book == null)
                 throw new Exception("Book not found"); //TODO use a custom exception 
 
