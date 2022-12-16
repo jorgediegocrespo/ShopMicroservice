@@ -72,7 +72,7 @@ public class BookServiceTest
         await using var context = await CreateContextAsync();
 
         var request = new NewBook.Execute();
-        request.Title = "Test title";
+        request.Title = "Test title"; error
         request.AuthorGuid = Guid.Empty;
         request.PublishDate = DateTime.Now;
 
