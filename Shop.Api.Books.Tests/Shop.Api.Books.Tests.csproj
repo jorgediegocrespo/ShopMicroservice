@@ -26,4 +26,16 @@
       <ProjectReference Include="..\Shop.Api.Books\Shop.Api.Books.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Helpers\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Helpers\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Helpers\**" />
+    </ItemGroup>
+
 </Project>
