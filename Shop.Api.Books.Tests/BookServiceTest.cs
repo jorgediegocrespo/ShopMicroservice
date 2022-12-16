@@ -1,32 +1,13 @@
 using AutoMapper;
-using GenFu;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 using Shop.Api.Books.Application;
 using Shop.Api.Books.Models;
 using Shop.Api.Books.Repository;
-using Shop.Api.Books.Tests.Helpers;
 
 namespace Shop.Api.Books.Tests;
 
 public class BookServiceTest
 {
-    // private IEnumerable<Book> GetTestData()
-    // {
-    //
-    //     A.Configure<Book>()
-    //         .Fill(x => x.BookId).
-    //         .Fill(x => x.Title).AsArticleTitle()
-    //         .Fill(x => x.BookGuid, () => { return Guid.NewGuid(); })
-    //         .Fill();
-    //
-    //
-    //     var data = A.ListOf<Book>(30);
-    //     data[0].BookGuid = Guid.Empty;
-    //
-    //     return data;   
-    // }
-
     private async Task<BookContext> CreateContextAsync()
     {
         var options = new DbContextOptionsBuilder<BookContext>()
@@ -47,26 +28,6 @@ public class BookServiceTest
 
         return context;
     }
-
-    // private Mock<BookContext> CreateMockedContext() 
-    // {
-    //     var testData = GetTestData().AsQueryable();
-    //     
-    //     var dbSet = new Mock<DbSet<Book>>();
-    //     dbSet.As<IQueryable<Book>>().Setup(x => x.Provider).Returns(testData.Provider);
-    //     dbSet.As<IQueryable<Book>>().Setup(x => x.Expression).Returns(testData.Expression);
-    //     dbSet.As<IQueryable<Book>>().Setup(x => x.ElementType).Returns(testData.ElementType);
-    //     dbSet.As<IQueryable<Book>>().Setup(x => x.GetEnumerator()).Returns(testData.GetEnumerator());
-    //     
-    //     dbSet.As<IAsyncEnumerable<Book>>().Setup(x => x.GetAsyncEnumerator(new System.Threading.CancellationToken()))
-    //     .Returns(new AsyncEnumerator<Book>(testData.GetEnumerator()));
-    //     
-    //     dbSet.As<IQueryable<Book>>().Setup(x => x.Provider).Returns(new AsyncQueryProvider<Book>(testData.Provider));
-    //     
-    //     var context = new Mock<BookContext>();
-    //     context.Setup(x => x.Books).Returns(dbSet.Object);
-    //     return context;
-    // }
     
     [Fact]
     public async void GetBookByGuid() 
