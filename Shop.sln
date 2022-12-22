@@ -1,5 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Api.Authors", "Shop.Api.Authors\Shop.Api.Authors.csproj", "{D6224A6B-365A-463D-AF30-505CFF917877}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Api.Books", "Shop.Api.Books\Shop.Api.Books.csproj", "{83FD314D-8B3D-4159-B722-8A1A840693F5}"
@@ -7,6 +8,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Api.Cart", "Shop.Api.Cart\Shop.Api.Cart.csproj", "{8736B25A-7CD2-4414-8DC6-228095C4330C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Api.Books.Tests", "Shop.Api.Books.Tests\Shop.Api.Books.Tests.csproj", "{B34BCE1E-DF4C-46A5-97E1-25908288EA99}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7207DA59-FD43-478E-BD78-AD426CB26DA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +33,9 @@ Global
 		{B34BCE1E-DF4C-46A5-97E1-25908288EA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B34BCE1E-DF4C-46A5-97E1-25908288EA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B34BCE1E-DF4C-46A5-97E1-25908288EA99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7207DA59-FD43-478E-BD78-AD426CB26DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7207DA59-FD43-478E-BD78-AD426CB26DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7207DA59-FD43-478E-BD78-AD426CB26DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7207DA59-FD43-478E-BD78-AD426CB26DA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

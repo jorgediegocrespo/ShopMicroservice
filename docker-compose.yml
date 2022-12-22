@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  shop.api.authors:
+    image: ${DOCKER_REGISTRY-}shopapi
+    build:
+      context: .
+      dockerfile: Shop.Api.Authors/Dockerfile
+  shop.api.books:
+    image: ${DOCKER_REGISTRY-}shopapi
+    build:
+      context: .
+      dockerfile: Shop.Api.Books/Dockerfile
+  shop.api.cart:
+    image: ${DOCKER_REGISTRY-}shopapi
+    build:
+      context: .
+      dockerfile: Shop.Api.Cart/Dockerfile
+
+networks:
+  default:
+    external: 
+      name: shopdev
+      
+

@@ -5,8 +5,11 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UserSecretsId>890ac937-42da-4cf8-8318-1c2048288cd9</UserSecretsId>
+        <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
     <ItemGroup>
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
         <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />

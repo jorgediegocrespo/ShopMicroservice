@@ -41,6 +41,7 @@ public class QueryCartSessionById
                 {
                     BookId = bookResponse.book.BookGuid,
                     BookTitle = bookResponse.book.Title,
+                    BookAuthor = bookResponse.book.AuthorGuid.ToString(),
                     PublishDate = bookResponse.book.PublishDate
                 });
             }
