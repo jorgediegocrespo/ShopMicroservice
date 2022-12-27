@@ -17,9 +17,16 @@ services:
       context: .
       dockerfile: Shop.Api.Cart/Dockerfile
 
+  shop.api.gateway:
+    image: ${DOCKER_REGISTRY-}shopapi
+    build:
+      context: .
+      dockerfile: Shop.Api.Gateway/Dockerfile
+
 networks:
   default:
     external: 
       name: shopdev
       
+
 

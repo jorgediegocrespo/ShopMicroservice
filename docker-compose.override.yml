@@ -34,3 +34,16 @@ services:
     volumes:
       - ~/.aspnet/https:/root/.aspnet/https:ro
       - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+
+  shop.api.gateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "9104:80"
+      - "9105:443"
+    depends_on:
+        - shop.api.books
+    volumes:
+      - ~/.aspnet/https:/root/.aspnet/https:ro
+      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
