@@ -6,8 +6,8 @@ using Shop.Api.Gateway.Config;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var routes = "DockerRoutes"; //docker
-//var routes = "LocalRoutes"; //local
+//var routes = "DockerRoutes"; //docker
+var routes = "LocalRoutes"; //local
 builder.Configuration.AddOcelotWithSwaggerSupport(options =>
 {
     options.Folder = routes;

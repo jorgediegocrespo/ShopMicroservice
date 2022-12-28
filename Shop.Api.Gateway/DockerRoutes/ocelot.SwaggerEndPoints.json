@@ -1,7 +1,7 @@
 ﻿{
   "SwaggerEndPoints": [
     {
-      "Key": "book",
+      "Key": "books",
       "TransformByOcelotConfig": true,
       "Config": [
         {
@@ -12,13 +12,24 @@
       ]
     },
     {
-      "Key": "bookByGuid",
+      "Key": "authors",
       "TransformByOcelotConfig": true,
       "Config": [
         {
-          "Name": "bookByGuid",
+          "Name": "authors",
           "Version": "1.0",
-          "Url": "http://shop.api.books:80/swagger/v1/swagger.json"
+          "Url": "http://shop.api.authors:80/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "cart",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "cart",
+          "Version": "1.0",
+          "Url": "http://shop.api.cart:80/swagger/v1/swagger.json"
         }
       ]
     }

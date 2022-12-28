@@ -1,17 +1,17 @@
 ﻿{
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/book/{everything}",
+      "DownstreamPathTemplate": "/api/cart/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "shop.api.books",
-          "Port": "80"
+          "Host": "localhost",
+          "Port": "5158"
         }
       ],
-      "UpstreamPathTemplate": "/book/{everything}",
+      "UpstreamPathTemplate": "/cart/{everything}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "SwaggerKey": "books"
+      "SwaggerKey": "cart"
     }
   ]
 }
