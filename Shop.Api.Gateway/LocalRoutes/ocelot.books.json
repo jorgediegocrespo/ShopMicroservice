@@ -1,0 +1,31 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/book",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5084"
+        }
+      ],
+      "UpstreamPathTemplate": "/book",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "SwaggerKey": "book"
+    },
+    {
+      "DownstreamPathTemplate": "/api/book/{guid}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "5084"
+        }
+      ],
+      "UpstreamPathTemplate": "/book/{guid}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "bookByGuid"
+    }
+  ]
+}
+

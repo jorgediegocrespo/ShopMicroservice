@@ -5,10 +5,10 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "shop.api.books",
-          //"Port": "6104"
-          "Host": "localhost",
-          "Port": "5084"
+          "Host": "shop.api.books",
+          "Port": "80"
+          //"Host": "localhost",
+          //"Port": "5084"
         }
       ],
       "UpstreamPathTemplate": "/book",
@@ -20,10 +20,10 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "shop.api.books",
-          //"Port": "6104"
-          "Host": "localhost",
-          "Port": "5084"
+          "Host": "shop.api.books",
+          "Port": "80"
+          //"Host": "localhost",
+          //"Port": "5084"
         }
       ],
       "UpstreamPathTemplate": "/book/{guid}",

@@ -11,6 +11,7 @@ services:
     volumes:
       - ~/.aspnet/https:/root/.aspnet/https:ro
       - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+
   shop.api.books:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

@@ -6,7 +6,8 @@ using Shop.Api.Gateway.Config;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var routes = "Routes";
+var routes = "DockerRoutes"; //docker
+//var routes = "LocalRoutes"; //local
 builder.Configuration.AddOcelotWithSwaggerSupport(options =>
 {
     options.Folder = routes;
@@ -32,8 +33,10 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
 }
-
-app.UseHttpsRedirection();
+else
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
 

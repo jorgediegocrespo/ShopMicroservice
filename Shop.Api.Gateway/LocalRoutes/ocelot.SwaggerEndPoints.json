@@ -1,0 +1,26 @@
+﻿{
+  "SwaggerEndPoints": [
+    {
+      "Key": "book",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "books",
+          "Version": "1.0",
+          "Url": "http://localhost:5084/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "bookByGuid",
+      "TransformByOcelotConfig": true,
+      "Config": [
+        {
+          "Name": "bookByGuid",
+          "Version": "1.0",
+          "Url": "http://localhost:5084/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}
