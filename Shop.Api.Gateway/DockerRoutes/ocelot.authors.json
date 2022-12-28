@@ -1,7 +1,7 @@
 ﻿{
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/author/{everything}",
+      "DownstreamPathTemplate": "/api/author",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -9,8 +9,35 @@
           "Port": "80"
         }
       ],
-      "UpstreamPathTemplate": "/author/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "UpstreamPathTemplate": "/author",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "authors",
+      "Key": "authors"
+    },
+    {
+      "DownstreamPathTemplate": "/api/author",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "shop.api.authors",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/author",
+      "UpstreamHttpMethod": [ "POST" ],
+      "SwaggerKey": "authors"
+    },
+    {
+      "DownstreamPathTemplate": "/api/author/{guid}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "shop.api.authors",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/author/{guid}",
+      "UpstreamHttpMethod": [ "GET" ],
       "SwaggerKey": "authors"
     }
   ]

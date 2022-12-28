@@ -1,7 +1,7 @@
 ﻿{
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/book/{everything}",
+      "DownstreamPathTemplate": "/api/book",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -9,9 +9,42 @@
           "Port": "80"
         }
       ],
-      "UpstreamPathTemplate": "/book/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "UpstreamPathTemplate": "/book",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "books",
+      "Key": "books"
+    },
+    {
+      "DownstreamPathTemplate": "/api/book",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "shop.api.books",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/book",
+      "UpstreamHttpMethod": [ "POST" ],
       "SwaggerKey": "books"
+    },
+    {
+      "DownstreamPathTemplate": "/api/book/{guid}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "shop.api.books",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/book/{guid}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "SwaggerKey": "books"
+    }
+  ],
+  "Aggregates": [
+    {
+      "RouteKeys": [ "authors", "books" ],
+      "UpstreamPathTemplate": "/bookAuthor"
     }
   ]
 }
