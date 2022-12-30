@@ -38,7 +38,8 @@
       ],
       "UpstreamPathTemplate": "/book/{guid}",
       "UpstreamHttpMethod": [ "GET" ],
-      "SwaggerKey": "books"
+      "SwaggerKey": "books",
+      "DelegatingHandlers": [ "BookHandler" ]
     }
   ],
   "Aggregates": [

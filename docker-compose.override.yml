@@ -40,6 +40,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
+      - Services__Authors=http://shop.api.gateway
     ports:
       - "9104:80"
       - "9105:443"

@@ -3,6 +3,8 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Polly;
 using Shop.Api.Gateway.Config;
+using Shop.Api.Gateway.MessageHandler;
+using Shop.Api.Gateway.RemoteServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +15,7 @@ builder.Configuration.AddOcelotWithSwaggerSupport(options =>
     options.Folder = routes;
 });
 
-builder.Services.AddOcelot(builder.Configuration).AddPolly();
+builder.Services.AddOcelot(builder.Configuration).AddPolly().AddDelegatingHandler<BookHandler>();
 builder.Services.AddSwaggerForOcelot(builder.Configuration);
 
 var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -22,7 +24,9 @@ builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
     .AddEnvironmentVariables();
 
 
+builder.Services.AddSingleton<IAuthorService, AuthorService>();
 builder.Services.AddControllers();
+builder.Services.AddHttpClient("Authors", config => config.BaseAddress = new Uri(builder.Configuration["Services:Authors"]));
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();

@@ -21,8 +21,14 @@
 
   <ItemGroup>
     <None Remove="Config\" />
+    <None Remove="MessageHandler\" />
+    <None Remove="RemoteServices\" />
+    <None Remove="RemoteModels\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
+    <Folder Include="MessageHandler\" />
+    <Folder Include="RemoteServices\" />
+    <Folder Include="RemoteModels\" />
   </ItemGroup>
 </Project>
