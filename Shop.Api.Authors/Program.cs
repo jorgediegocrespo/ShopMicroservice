@@ -2,12 +2,15 @@ using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shop.Api.Authors.Application;
+using Shop.Api.Authors.EventBusHandlers;
 using Shop.Api.Authors.Repository;
+using Shop.Messages.Bus.Bus;
+using Shop.Messages.Bus.EventQueues;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+builder.Services.AddTransient<IEventBus, RabbitEventBus>();
+builder.Services.AddTransient<IEventHandler<EmailMessageEventQueue>, EmailEventHandler>();
 builder.Services.AddControllers()
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<NewAuthor>());
     
@@ -39,5 +42,7 @@ else
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.Services.GetRequiredService<IEventBus>().Subscribe<EmailMessageEventQueue, EmailEventHandler>();
 
 app.Run();

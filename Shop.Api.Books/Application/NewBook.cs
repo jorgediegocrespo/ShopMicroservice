@@ -2,6 +2,8 @@ using FluentValidation;
 using MediatR;
 using Shop.Api.Books.Models;
 using Shop.Api.Books.Repository;
+using Shop.Messages.Bus.Bus;
+using Shop.Messages.Bus.EventQueues;
 
 namespace Shop.Api.Books.Application;
 
@@ -27,12 +29,14 @@ public class NewBook
     public class Handler : IRequestHandler<Execute>
     {
         private readonly BookContext _bookContext;
+        private readonly IEventBus _eventBus;
 
-        public Handler(BookContext bookContext)
+        public Handler(BookContext bookContext, IEventBus eventBus)
         {
             _bookContext = bookContext;
+            _eventBus = eventBus;
         }
-        
+
         public async Task<Unit> Handle(Execute request, CancellationToken cancellationToken)
         {
             _bookContext.Books.Add(new Book()
@@ -44,10 +48,11 @@ public class NewBook
             });
 
             var result = await _bookContext.SaveChangesAsync(cancellationToken);
-            if (result > 0)
-                return Unit.Value;
+            if (result <= 0)
+                throw new Exception("The book has not been added"); //TODO use a custom exception
 
-            throw new Exception("The book has not been added"); //TODO use a custom exception
+            _eventBus.Publish(new EmailMessageEventQueue("jorgediegocrespo@gmail.com", request.Title, "This is a test"));
+            return Unit.Value;            
         }
     }
 }

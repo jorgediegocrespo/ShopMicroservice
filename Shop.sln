@@ -13,6 +13,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Api.Gateway", "Shop.Api.Gateway\Shop.Api.Gateway.csproj", "{C7BB9AEE-C6F8-4ABE-8C43-1B8FBDA17A47}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Messages.Bus", "Shop.Messages.Bus\Shop.Messages.Bus.csproj", "{8C2A7668-B6F5-49E0-933B-8EC4A862B688}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,5 +45,9 @@ Global
 		{C7BB9AEE-C6F8-4ABE-8C43-1B8FBDA17A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7BB9AEE-C6F8-4ABE-8C43-1B8FBDA17A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7BB9AEE-C6F8-4ABE-8C43-1B8FBDA17A47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C2A7668-B6F5-49E0-933B-8EC4A862B688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C2A7668-B6F5-49E0-933B-8EC4A862B688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C2A7668-B6F5-49E0-933B-8EC4A862B688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C2A7668-B6F5-49E0-933B-8EC4A862B688}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

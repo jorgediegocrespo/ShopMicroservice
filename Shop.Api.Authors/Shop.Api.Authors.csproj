@@ -28,4 +28,15 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Shop.Messages.Bus\Shop.Messages.Bus.csproj">
+        <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="EventBusHandlers\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="EventBusHandlers\" />
+    </ItemGroup>
 </Project>

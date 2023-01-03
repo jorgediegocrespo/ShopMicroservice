@@ -3,11 +3,11 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shop.Api.Books.Application;
 using Shop.Api.Books.Repository;
+using Shop.Messages.Bus.Bus;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+builder.Services.AddTransient<IEventBus, RabbitEventBus>();
 builder.Services.AddControllers()
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<NewBook>());
 

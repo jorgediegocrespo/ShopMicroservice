@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Bus\" />
+    <None Remove="Commands\" />
+    <None Remove="Events\" />
+    <None Remove="EventQueues\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Bus\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Events\" />
+    <Folder Include="EventQueues\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+  </ItemGroup>
+</Project>
