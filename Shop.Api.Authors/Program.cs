@@ -9,7 +9,8 @@ using Shop.Messages.Bus.EventQueues;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddTransient<IEventBus, RabbitEventBus>();
+builder.Services.AddSingleton<IEventBus, RabbitEventBus>(x => new RabbitEventBus(x.GetService<IMediator>(), x.GetRequiredService<IServiceScopeFactory>()));
+builder.Services.AddTransient<EmailEventHandler>();
 builder.Services.AddTransient<IEventHandler<EmailMessageEventQueue>, EmailEventHandler>();
 builder.Services.AddControllers()
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<NewAuthor>());

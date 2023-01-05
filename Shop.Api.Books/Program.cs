@@ -7,7 +7,7 @@ using Shop.Messages.Bus.Bus;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddTransient<IEventBus, RabbitEventBus>();
+builder.Services.AddSingleton<IEventBus, RabbitEventBus>(x => new RabbitEventBus(x.GetService<IMediator>(), x.GetRequiredService<IServiceScopeFactory>()));
 builder.Services.AddControllers()
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<NewBook>());
 
