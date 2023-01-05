@@ -24,6 +24,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Shop.Api.Books\Shop.Api.Books.csproj" />
+      <ProjectReference Include="..\Shop.Messages.Bus\Shop.Messages.Bus.csproj" />
     </ItemGroup>
 
     <ItemGroup>

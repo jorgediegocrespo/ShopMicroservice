@@ -51,7 +51,7 @@ public class NewBook
             if (result <= 0)
                 throw new Exception("The book has not been added"); //TODO use a custom exception
 
-            _eventBus.Publish(new EmailMessageEventQueue("jorgediegocrespo@gmail.com", request.Title, "This is a test"));
+            _eventBus?.Publish(new EmailMessageEventQueue("jorgediegocrespo@gmail.com", request.Title, "This is a test"));
             return Unit.Value;            
         }
     }

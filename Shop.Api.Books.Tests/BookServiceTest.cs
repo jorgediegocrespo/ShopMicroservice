@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Shop.Api.Books.Application;
 using Shop.Api.Books.Models;
 using Shop.Api.Books.Repository;
+using Shop.Messages.Bus.Bus;
 
 namespace Shop.Api.Books.Tests;
 
@@ -76,7 +77,7 @@ public class BookServiceTest
         request.AuthorGuid = Guid.Empty;
         request.PublishDate = DateTime.Now;
 
-        var handler = new NewBook.Handler(context);
+        var handler = new NewBook.Handler(context, null);
 
         var book = await handler.Handle(request, new System.Threading.CancellationToken());
 
